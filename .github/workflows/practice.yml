@@ -1,0 +1,26 @@
+name: GitHub Actions Practice
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  diagnostic-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    # This step uses standard Linux commands that work in any repository
+    - name: Run system diagnostics
+      run: |
+        echo "Pipeline triggered by: ${{ github.event_name }}"
+        echo "Repository owner: ${{ github.repository_owner }}"
+        echo "Operating System Info:"
+        uname -a
+        echo "Current Date and Time:"
+        date
