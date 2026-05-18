@@ -26,5 +26,14 @@ jobs:
         date
 
     - name: Run More unix command
-      run: echo "Hello Rajiv. Your github repository Name is ${{ github.repostory_owner }}"
+      run: echo "Hello Rajiv. Your github repository Name is ${{ github.repository_owner }}"
+
+    - name: Build
+      run: echo "Hello Build"
+
+    - name: TEST
+      run: |
+         echo "Hello TEST"
+         echo "Hello TEST2"
+           
     
